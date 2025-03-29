@@ -1,0 +1,74 @@
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    nav {
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for claim buttons */
+button[id$="-claim"] {
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+button[id$="-claim"]:hover:not(:disabled) {
+    transform: scale(1.03);
+}
+
+button[id$="-claim"]:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* Loading spinner for claim buttons */
+button[id$="-claim"].loading {
+    position: relative;
+    color: transparent;
+}
+
+button[id$="-claim"].loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* Ad banner styling */
+.ad-banner {
+    border: 1px dashed #4b5563;
+    transition: all 0.3s ease;
+}
+
+.ad-banner:hover {
+    border-color: #6b7280;
+}
